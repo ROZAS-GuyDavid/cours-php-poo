@@ -1,7 +1,16 @@
 <?php
 require 'form.php';
+require 'Personnage.php';
+require 'text.php';
+
+$merlin = new Personnage('Merlin');
+$merlin->regenerer();
+
+var_dump($merlin);
 
 $form = new Form($_POST);
+var_dump(Text::publicwithZero(10));
+
 ?>
 
 <form action="#" method="post">
