@@ -1,13 +1,29 @@
 <?php
 class Personnage{
     
-    public $vie = 60;
-    public $atk = 20;
-    public $nom;
+    private $vie = 60;
+    private $atk = 20;
+    private $nom;
 
     public function __construct($nom)
     {
         $this->nom = $nom;
+    }
+
+    public function setNom($nom){
+        $this->nom = $nom;
+    }
+
+    public function getNom(){
+        return "Mr." . $this->nom;
+    }
+
+    public function getVie(){
+        return $this->vie;
+    }
+
+    public function getAtk(){
+        return $this->atk;
     }
 
     public function regenerer($vie = null){
@@ -23,7 +39,14 @@ class Personnage{
         return $this->vie <= 0;
     }
 
+    private function empecher_negatif(){
+        if ($this-> vie < 0) {
+            return $this->vie = 0;
+        }
+    }
+
     public function attaque($cible){
         $cible->vie -= $this->atk;
+        $cible->empecher_negatif();
     }
 }

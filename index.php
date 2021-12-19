@@ -4,10 +4,8 @@ require 'Personnage.php';
 $merlin = new Personnage("Merlin");
 $harry = new Personnage("Harry");
 
-$merlin->attaque($harry);
+$merlin->setNom("Marlin");
 
-if ($harry->mort()) {
-    echo "Harry est mort!";
-} else {
-    echo "Harry à survecu avec ". $harry->vie;
-}
+var_dump($merlin->getNom());
+var_dump($merlin->getAtk());
+var_dump($merlin->getVie());
