@@ -1,22 +1,11 @@
 <?php
-require 'form.php';
 require 'Personnage.php';
-require 'text.php';
+require 'Archer.php';
 
 $merlin = new Personnage('Merlin');
-$merlin->regenerer();
+$harry = new Personnage('Harry');
+$legolas = new Archer('Legolas');
 
-var_dump($merlin);
+$legolas->attaque($harry);
 
-$form = new Form($_POST);
-var_dump(Text::publicwithZero(10));
-
-?>
-
-<form action="#" method="post">
-    <?php
-        echo $form->input('username');
-        echo $form->input('password');
-        echo $form->submit();
-    ?>
-</form>
+var_dump($merlin, $harry, $legolas);
