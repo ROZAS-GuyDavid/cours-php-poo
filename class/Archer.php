@@ -1,4 +1,5 @@
 <?php
+namespace Tutoriel;
 class Archer extends Personnage{
 
     // protected $vie = 40;
