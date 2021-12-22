@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="generator" content="">
-    <title>TP: Connexion à la base de donnée</title>
+    <title><?= App\App::getTitle() ?></title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -25,19 +25,14 @@
                 </a>
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="#" class="nav-link px-2 text-white">Home</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">Single</a></li>
+                    <li><a href="index.php?p=home" class="nav-link px-2 text-white">Home</a></li>
                 </ul>
             </div>
             </div>
         </header>
 
         <div class="container col-xxl-8 px-4 py-5">
-            <div class="row flex align-items-center g-5 py-5">
-                <div class="col-lg-8">
-                    <?= $content; ?>
-                </div>
-            </div>
+            <?= $content; ?>
         </div>
     </main>
   </body>
