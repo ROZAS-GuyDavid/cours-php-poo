@@ -1,13 +1,10 @@
 <?php
-use App\App;
-use App\Table\Article;
-use App\Table\Categorie;
-
-$post = Article::find($_GET['id']);
+$app = App::getInstance();
+$post = $app->getTable('Post')->find($_GET['id']);
 if ($post === false) {
-    App::notFound();
+    $app->notFound();
 }
-App::setTitle($post->titre);
+$app->title = $post->titre;
 ?>
 
 <h2 class="display-5 fw-bold lh-1 mb-3"><?= $post->titre; ?></h2>
